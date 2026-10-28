@@ -1,0 +1,40 @@
+name: Publish audited Rider APK
+on:
+  push:
+    branches: [publication-requests]
+    paths: ['request/**']
+permissions:
+  contents: write
+concurrency:
+  group: rider-apk-release-promotion
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out trusted publisher policy
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Check out request as data only
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.sha }}
+          path: incoming
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+        with:
+          packages: 'build-tools;36.0.0'
+      - name: Test publisher safeguards
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Verify complete draft and promote monotonically
+        env:
+          DOWNLOADS_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_release.py --payload-root incoming --build-tools "$ANDROID_HOME/build-tools/36.0.0"
