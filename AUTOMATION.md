@@ -1,5 +1,7 @@
 # Audited downloads publication
 
+**Owner decision: automation pending.** The private source queue workflow is manually disabled; normal Android build CI remains active. This repository's publisher stays guarded without incoming requests. Do not provision credentials, re-enable the queue or create another public app release until the owner resumes activation.
+
 This repository contains distribution assets and publisher infrastructure only, never Android application source or private app configuration.
 
 ## Trust boundary
@@ -9,6 +11,8 @@ The private Android repo's `Queue audited Rider download` workflow runs only aft
 The handoff uses a **short-lived GitHub App installation token restricted to this repository**. No personal GitHub token or app-signing private key is copied here. Private CI's GITHUB_TOKEN has only contents/read and actions/read. The token-creation action requests only this repository and Contents/write; the queue additionally verifies `/installation/repositories` reports exactly this single repository, rejecting broader tokens. It is revoked after the job. Its Git authorization header is passed through process environment only, never a URL, Git config file or commit.
 
 **Activation requires one human setup:** register/install a GitHub App with Contents/read-write and Metadata/read, selecting only `rider-app-downloads`. Set private Android repo variable `RIDER_DOWNLOADS_APP_ID` and secret `RIDER_DOWNLOADS_APP_PRIVATE_KEY`. Do not paste the private key into chat. Deploy-key provisioning was explicitly rejected by GitHub: deploy keys are disabled for this repository. That policy was not changed and no deploy key/SSH secret was created. Do not substitute a broad PAT. Until the App is configured, equal/older builds safely skip; a newer candidate stops with a clear provisioning error before any public write.
+
+After owner-authorized App setup, re-enable `Queue audited Rider download` in the private Android Actions UI or with `gh workflow enable queue-rider-download.yml --repo TelemetrixOne/trike-phone-app`. Its current disabled state is intentional, not a build failure.
 
 Private CI serializes HTTPS pushes to `publication-requests`. That branch contains the current three-file `request/` and publisher infrastructure inherited from main. It is not a source branch. Request Git history contains distribution APK bytes, not app source. No force pushes or ambient credential helpers are used.
 
