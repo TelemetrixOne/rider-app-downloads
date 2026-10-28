@@ -1,6 +1,8 @@
 # Audited downloads publication
 
-**Owner decision: automation pending.** The private source queue workflow is manually disabled; normal Android build CI remains active. This repository's publisher stays guarded without incoming requests. Do not provision credentials, re-enable the queue or create another public app release until the owner resumes activation.
+**Owner decision: automation pending.** The private source queue workflow is manually disabled; normal Android build CI remains active. This repository's publisher stays guarded without incoming requests. Do not provision credentials or re-enable the queue until the owner resumes activation. Future public releases require explicit owner authorization while automation is pending.
+
+**Authorized manual release, 29 October 2026:** v2.12.1 (code 24) is published from successful audited Android build `40770054545`, source `90bada583a242d76ca19efb4b59f3953432fa4b6`, APK SHA-256 `c3cf5cc53d99a61a35c8ebaa5e9ee0bbed9c3efdb24c874e988b4b15668c4edc`. All five draft assets were downloaded and byte-verified before promotion to latest. This one-off local publication did not enable automation or provision/store credentials in CI or either repository.
 
 This repository contains distribution assets and publisher infrastructure only, never Android application source or private app configuration.
 
