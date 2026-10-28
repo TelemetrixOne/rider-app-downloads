@@ -12,6 +12,8 @@ The handoff uses a **short-lived GitHub App installation token restricted to thi
 
 Private CI serializes HTTPS pushes to `publication-requests`. That branch contains the current three-file `request/` and publisher infrastructure inherited from main. It is not a source branch. Request Git history contains distribution APK bytes, not app source. No force pushes or ambient credential helpers are used.
 
+Every source wake-up rediscovers the highest-code eligible successful main build, regardless of completion order. The queue checks the existing branch request immediately before committing and skips equal/older codes. Thus GitHub concurrency's single pending slot cannot cause a lower-code completion to replace or lose a newer candidate. Public workflow reruns recover failed promotion attempts without rewriting the same queued request.
+
 ## Public publisher
 
 `Publish audited Rider APK` listens only to request-directory pushes on `publication-requests`. It executes policy checked out from **main**, not code supplied by the request. Request files are data only. Its own public-repository GITHUB_TOKEN has contents/write solely here. GitHub Actions is serialized with cancel-in-progress false.
