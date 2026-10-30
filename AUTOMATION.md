@@ -4,6 +4,8 @@
 
 **Authorized manual release, 29 October 2026:** v2.12.1 (code 24) is published from successful audited Android build `40770054545`, source `90bada583a242d76ca19efb4b59f3953432fa4b6`, APK SHA-256 `c3cf5cc53d99a61a35c8ebaa5e9ee0bbed9c3efdb24c874e988b4b15668c4edc`. All five draft assets were downloaded and byte-verified before promotion to latest. This one-off local publication did not enable automation or provision/store credentials in CI or either repository.
 
+**Authorized manual release, 30 October 2026:** latest is v2.13.0 (code 25), successful audited Android build `40997958213`, source `cb5c2ad293e34df9433e94d21febcde2f389c22a`, APK SHA-256 `0f80cfa7358020f1153f60946c388e6f69023ac8e853f82f635b5506a28ff6e2`. The original immutable CI artifact and established signer were reverified. All five draft assets were downloaded and byte-compared before promotion; versioned/stable APKs and latest metadata were then verified anonymously. Native HiveMQ secure-WebSocket probes passed both prepared public hosts, including trusted TLS/hostname checks and anonymous MQTT authentication refusal. No phone installation, pairing changes, account rotation, CI credential provisioning or automation activation occurred. The release notes require the new two-pose tilt calibration and distinguish verified transport from physical-device acceptance. Publication used the existing local signed-in GitHub CLI account without retaining a token in either repository or CI.
+
 This repository contains distribution assets and publisher infrastructure only, never Android application source or private app configuration.
 
 ## Trust boundary
