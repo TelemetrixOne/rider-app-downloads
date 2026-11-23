@@ -1,6 +1,8 @@
 # Audited downloads publication
 
-**Latest authorized manual release, 23 November 2026:** v3.0.2 (code 30) fixes calibration with publishing off and improves Race Readiness and launch branding. Successful audited build `45102447030`, source `ef3749dbbe961cf34b67e436250fc88d57286ecb`, SHA-256 `203989d2f04a0a3ad04e298c8c37b622fa553000df0b25ed53419c2cdbf700b0`. The upgrade-compatible signed APK and all five draft assets were verified before promotion. Both anonymous APK downloads and public metadata were verified.
+**Latest authorized manual release, 23 November 2026:** v3.0.3 (code 31) increases Rider View message button spacing where the layout has room. Successful audited build `45103369749`, source `e73a989e5355c67fb288dd994b0fb3896645e0d4`, SHA-256 `774e1162822c2269a9c436db430825f476c0c394f44d2e95482c5efa52dc206d`. The upgrade-compatible signed APK and all five draft assets were verified before promotion. Both anonymous APK downloads and public metadata were verified.
+
+**Authorized manual release, 23 November 2026:** v3.0.2 (code 30) fixes calibration with publishing off and improves Race Readiness and launch branding. Successful audited build `45102447030`, source `ef3749dbbe961cf34b67e436250fc88d57286ecb`, SHA-256 `203989d2f04a0a3ad04e298c8c37b622fa553000df0b25ed53419c2cdbf700b0`. The upgrade-compatible signed APK and all five draft assets were verified before promotion. Both anonymous APK downloads and public metadata were verified.
 
 **Authorized manual release, 23 November 2026:** v3.0.1 (code 29) improves validation feedback and adds bounded numeric controls. Successful audited build `45100350049`, source `6ad1ad081668164149f023138e646a6d29247701`, SHA-256 `6d76cc0b72bed3fc776642d47725014d2476d040c1bb1312fa44a19202ccced9`. The signed artifact and all five draft assets were verified before promotion. Anonymous versioned and stable downloads and the TM1 Rider App page metadata match v3.0.1.
 

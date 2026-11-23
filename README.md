@@ -6,6 +6,8 @@ Official Android APK downloads. Application source remains private.
 
 Install over the existing app. **Do not uninstall or clear app data.** Android 8.0 or later is required. Allow installation from your browser if Android prompts you, open the downloaded APK and choose Install/Update. Existing settings and pairing are retained by an in-place upgrade.
 
+**v3.0.3:** The Rider View gives message buttons up to twice the space between them, with a smaller gap when space is tight to keep labels readable. See the [release notes](https://github.com/TelemetrixOne/rider-app-downloads/releases/tag/v3.0.3).
+
 **v3.0.2:** Calibrate rollover with publishing off, see the TM1 logo on fresh launches, and use the redesigned race readiness screen to check whether this phone is paired and connected for remote control. See the [release notes](https://github.com/TelemetrixOne/rider-app-downloads/releases/tag/v3.0.2).
 
 **v3.0.1:** Race readiness opens the first setting that needs correction and explains it in place. Numeric settings show their allowed ranges and have minus and plus controls. See the [release notes](https://github.com/TelemetrixOne/rider-app-downloads/releases/tag/v3.0.1).
